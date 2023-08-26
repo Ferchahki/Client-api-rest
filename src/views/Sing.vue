@@ -13,15 +13,15 @@
         <label for="exampleInputPassword1" class="form-label mt-4">Password</label>
         <input v-model="user.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" autocomplete="off">
         </div>
-        <button type="submit" class="btn btn-primary">SING IN </button>
+        <button  class="btn btn-primary">SING IN </button>
     </form>
         </div>
     </div>
 
 </template>
 <script>
-import axios from 'axios';
-import {mapActions} from 'vuex';
+import axios from 'axios'
+import { mapActions } from 'vuex';
 export default {
     data(){
         return {
@@ -31,14 +31,16 @@ export default {
             }
         }
     },
-    methods:{
+    methods: {
         ...mapActions({
+
             'signIn': 'auth/signIn'
+
         }),
-        submit(){
-            this.signIn(this.user);
-        }
-      
+       submit() {
+        
+           this.signIn(this.user);
+       }
     },
 }
 </script>

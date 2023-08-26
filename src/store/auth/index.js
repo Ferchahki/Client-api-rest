@@ -5,13 +5,18 @@ export default {
   mutations: {},
   getters: {},
   actions: {
-    async signin(_, credentials) {
+
+    async signIn(__, credentials) {
+
       try {
-        const response = await axios.post("auth/login", credentials);
-        console.log(response.data);
+          const response = await axios.post('auth/login', credentials)
+          
+          console.log(response.data);
+
       } catch (error) {
-        console.log("failed");
+          console.log(error)
       }
-    },
+
+      },
   },
 };
